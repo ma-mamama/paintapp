@@ -9,10 +9,6 @@ import psycopg2
 import os
 
 def title(request):
-    # if request.method=="POST":
-    #     name = request.POST['username']
-    #     print(name)
-    #     return redirect('index/' + name)
     return render(request, 'imgapp/title.html')
 
 def index(request):
