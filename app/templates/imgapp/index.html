@@ -1,0 +1,36 @@
+{% load static %}
+<!DOCTYPE html>
+<html >
+<head>
+    <meta charset="UTF-8">
+    <script src="{% static 'imgapp/js/index.js' %}"></script>
+    <link rel="stylesheet" href="{% static 'imgapp/css/style.css' %}">
+    <title>{{title}}</title>
+</head>
+<body>
+    <a href="{% url 'title' %}"><img id=home src="../../static/imgapp/img/ippitu.png"></a>
+    <h1>お絵かき</h1>
+    <p id=time>TIMELIMIT: 30s</p>
+    <form action="{% url 'index' %}" method="post">
+        {% csrf_token %}
+        <sapn>
+            Title：
+            <input type="text" name="title" id="id_title" required>
+        </span>
+        <span>
+            作成者：
+            <input type="text" name="name" id="id_name" required>
+        </span>  
+        <textarea name="Imagepaint" id="Imagepaint" style="display:none" required ></textarea>
+        <input id="upload" type="submit" value="Upload">
+    </form>
+    <div>
+    <canvas id="canvas" width="530" height="350"></canvas>
+    <img src="../../static/imgapp/img/start.png" id="start" >
+    <table id="colorTbl">
+        <tr></tr>
+    </table>
+    </div>
+    
+</body>
+</html>

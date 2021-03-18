@@ -1,0 +1,30 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static 'imgapp/css/show.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@600&display=swap" rel="stylesheet">
+    <title>show</title>
+</head>
+<body>
+    <a href="{% url 'title' %}"><img id=home src="../../static/imgapp/img/ippitu.png"></a>
+    <h1  id="title" class="center" >作品集</h1>
+    {% for image in images %}
+    <div class="sakuhin">
+        <h2>Title：{{ image.title }}</h2>
+        <img class="paintimg" src='{{image.Image}}' width=200>
+        <h2>作者：{{ image.name }}<h2>
+        <form action="{% url 'delete' image.id %}" method="post">
+            {% csrf_token %}
+            <input type="submit" value="delete">
+        </form>
+    </div>
+    
+    {% endfor %}
+
+</body>
+<footer>
+    <a href="{% url 'title' %}">HOME</a>
+</footer>
+</html>

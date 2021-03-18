@@ -1,0 +1,32 @@
+body {
+    background-color: burlywood;
+}
+.paintimg {
+    border: solid 10px #e0e0e0;
+    box-shadow: 3px 3px 5px 5px rgba(0, 0, 0, 0.3);
+    background-color: #ffffff;
+}
+
+.sakuhin {
+    float: left;
+    margin: 20px;
+}
+h1 {
+    text-align: center;
+}
+#home {
+    position: absolute;
+    width: 10%;
+    left: 0;
+    margin-left: 15px;
+}
+.center {
+    text-align: center;
+}
+
+footer {
+    clear: both;
+    font-size: 30px;
+    text-align: right;
+    margin: 20px;
+}

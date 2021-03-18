@@ -1,0 +1,16 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static 'imgapp/css/title.css' %}">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <title>title</title>
+</head>
+<body>
+    <p id="ippitu"></p>
+    <p>絵を描くアプリです<br>タイムリミットは30秒</p>
+    <a href="{% url 'index' %}"><img class="url" src="../../static/imgapp/img/pen.jpeg"></a>
+    <a href="{% url 'next' %}"><img class="url" src="../../static/imgapp/img/book.jpeg"></a>
+</body>
+</html>
