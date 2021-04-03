@@ -27,7 +27,7 @@
      canvas.onmousedown = function (e) {
        if(canwrite == false) return;
        context.beginPath();
-       context.moveTo(e.offsetX -15 , e.offsetY - 40);
+       context.moveTo(e.offsetX -20 , e.offsetY - 50);
        isWriting = true;
      };
      canvas.ontouchstart = function (e) {
@@ -44,7 +44,7 @@
      canvas.onmousemove = function (e) { 
       if(canwrite == false) return;
        if(isWriting){
-       context.lineTo(e.offsetX -15, e.offsetY -40);
+       context.lineTo(e.offsetX -20, e.offsetY -50);
        context.stroke();
        }
      };
