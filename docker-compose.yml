@@ -2,9 +2,15 @@ version: '3'
 services:
   db:
     image: postgres
+    ports: 
+      - "5432:5432"
     environment:
       POSTGRES_USER: masato
       POSTGRES_PASSWORD: masato
+      PGDATA: /var/lib/postgresql/data/pgdata
+    volumes:
+      - dbdata:/var/lib/postgresql/data
+  
   web:
     build: .
     command: python3 manage.py runserver 0.0.0.0:8000
@@ -14,5 +20,6 @@ services:
       - "8000:8000"
     depends_on:
       - db
-  
+volumes:
+  dbdata:
     
